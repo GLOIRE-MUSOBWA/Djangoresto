@@ -1,0 +1,30 @@
+<! DOCTYPE html>
+<html lang="fr">
+    <head>
+         </head>
+        <body>
+        <form method="POST" action="/tab">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Entre Datail<h3>
+                </p>
+                    <div>
+                        <p>Numero table:</p>{{form.numero_table}}
+                    </div>
+                    <div>
+                        <p>Capacite table:</p>{{form.capacite_table}}
+                    </div>
+                    <div>
+                        <p>Description table:</p>{{form.description_table}}
+                    </div>
+                    <div>
+                       <br>
+                       <button type="submit">Submit</button>
+                    </div>
+            </div>
+        </form>
+        </body>
+   
+    </html>
