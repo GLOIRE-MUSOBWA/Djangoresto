@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html lang="fr">
+    <head>
+         </head>
+        <body>
+        <form method="POST" action="/reserver">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Entre Datail<h3>
+                </p>
+                    <div>
+                        <p>Nom du Client:</p>{{form.nom_client}}
+                    </div><br>
+                    <div>
+                          <select name="{{form.table_reserver}}" id="" style="width: 500px;" class="form-control">
+                                  
+                                    <option value="">Selectioner le numero de table  </option>
+                                      
+                                    {%for restorantbar in restaurant %}
+                                    {{restorantbar.numero_table}}
+                                    {% endfor %}
+                                </select><br></br>
+                      
+                    </div>
+                    <div>
+                        <p>Nombre de personne:</p>{{form.nombre_personne}}
+                    </div>
+                    <div>
+                       <br>
+                       <button type="submit">Submit</button>
+                    </div>
+            </div>
+        </form>
+        </body>
+   
+    </html>
