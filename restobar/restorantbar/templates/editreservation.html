@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html lang="fr">
+    <head>
+         </head>
+        <body>
+        <form method="POST" action="/updatereservation/{{  restaurant.id}}">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Entre Datail<h3>
+                </p>
+                    <div>
+                        <p>Numero table:</p>
+                        <div>
+                        <input type="text" name="nom_client" value="{{  restaurant.nom_client}}" />
+                        </div>
+                    </div>
+                    <div>
+                        <p>Capacite table:</p>
+                         <div>
+                        <input type="text" name="table_reserver" value="{{  restaurant.table_reserver}}" />
+                        </div>
+                    </div>
+                    <div>
+                        <p>Description table:</p>
+                         <div>
+                        <input type="text" name="nombre_personne" value="{{  restaurant.nombre_personne}}" />
+                        </div>
+                    </div>
+                    <div>
+                       <br>
+                       <button type="submit">Submit</button>
+                    </div>
+            </div>
+        </form>
+        </body>
+   
+    </html>

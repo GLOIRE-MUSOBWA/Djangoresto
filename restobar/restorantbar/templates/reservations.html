@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="card border border-0 shadow-sm py-5">
+   <div class="card-body border border-0">
+      <table class="table">
+         <thead class="table table-bordered text-success">
+           <tr class="text-success text-center">
+             <th scope="col"  class="bg-success-subtle">Identifiant</th>
+             <th scope="col"  class="bg-success-subtle">Nom Client</th>
+             <th scope="col" class="bg-success-subtle">Table Reserver</th>
+             <th scope="col" class="bg-success-subtle">Nombre Personne</th>
+             <th scope="col" class="bg-success-subtle">Date de reservation</th>
+             <th scope="col"  class="bg-success-subtle">Action</th>
+           </tr>
+         </thead>
+         <tbody>
+          {%for restorantbar in restaurant %}
+         
+           <tr class="text-center">
+             <th scope="row">{{restorantbar.id}}</th>
+             <td>{{restorantbar.nom_client}}</td>
+             <td>{{restorantbar.table_reserver}}</td>
+             <td>{{restorantbar.nombre_personne}}</td>
+             <td>{{restorantbar.date_reservation}}</td>
+             <td>
+                {% comment %} <button type="button" class="btn btn-warning btn-sm px-2 text-white"><i class="bi bi-box-arrow-in-up-right"></i>  Modifier</button>
+                <button type="button" class="btn btn-danger btn-sm px-2"><i class="bi bi-trash3"></i>  Supprimer</button> {% endcomment %}
+                <a href="/editreservation/{{restaurantbar.id}}"> Edit</a>
+                <a href="/delete/{{restaurantbar.id}}"> Delete</a>
+              </td>
+           </tr>
+           {% endfor %}
+         </tbody>
+       </table>
+
+     <button> <a style="color:white" href="/reservation"> Ajouter</a></button>
+   </div>
+ </div>
+
+
+
+
+       </div>
+     </div>
+    </div>
+</div>
+    </body>
+    </html>
